@@ -1,4 +1,7 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
+
+<h1>Song</h1>
 
 <p>
   <strong>Name:</strong>
@@ -7,7 +10,7 @@
 
 <p>
   <strong>Artist:</strong>
-  <%= @song.artist %>
+  <%= @song.artist.name %>
 </p>
 
 <p>
@@ -21,9 +24,9 @@
 </p>
 
 <p>
-  <strong>Img:</strong>
-  <%= @song.img %>
+  <%= image_tag(@song.img, class: "thumbnail right") %>
 </p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<!-- <%= link_to 'Edit', edit_song_path(@song) %> | -->
+<%= link_to 'Back', artist_path(@song.artist.id), class: "btn btn-default btn-lg" %>
+</div>

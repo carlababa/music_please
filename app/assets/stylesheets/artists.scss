@@ -1,3 +1,19 @@
-.thumbnail img {
+.thumbnail {
   max-width: 300px;
+  // display: inline;
+}
+
+.artist-img {
+  width: 40%;
+  margin: auto;
+  border-radius: 5px;
+  // display: flex;
+}
+
+.name {
+  // text-align: center;
+}
+
+.right {
+  display: inline;;
 }

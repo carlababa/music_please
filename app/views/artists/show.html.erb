@@ -1,14 +1,31 @@
+<div class="container">
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
+  <div class="name">
+    <h1><%= @artist.name %></h1>
+  </div>
 </p>
 
 <p>
-  <strong>Img:</strong>
-  <%= @artist.img %>
+  <%= image_tag(@artist.img, class: "artist-img") %>
 </p>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<div class="name">
+  <h2>Songs</h2>
+</div>
+
+<% @artist.songs.each do |song| %>
+  <div class="name">
+    <p>Name: <%= link_to song.name, song %><p>
+    <p>Album: <%= song.album %>, <%= song.year %><p>
+  </div>
+  <div class="thumbnail">
+    <%= image_tag(song.img) %>
+  </div>
+<%end%>
+
+<!-- <%= link_to 'Edit', edit_artist_path(@artist) %> | -->
+<div class="name"><%= link_to 'Back', artists_path, class: "btn btn-default btn-lg" %></div>
+</div>
