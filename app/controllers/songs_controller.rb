@@ -15,10 +15,13 @@ class SongsController < ApplicationController
   # GET /songs/new
   def new
     @song = Song.new
+    @song.image = params[:file]
+    @artists = Artist.all
   end
 
   # GET /songs/1/edit
   def edit
+    @artists = Artist.all
   end
 
   # POST /songs
@@ -69,6 +72,6 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:name, :artist_id, :year, :album, :img)
+      params.require(:song).permit(:name, :artist_id, :year, :album, :img, :image)
     end
 end

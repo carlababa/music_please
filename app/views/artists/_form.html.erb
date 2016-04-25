@@ -16,10 +16,13 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :img %><br>
-    <%= f.text_field :img %>
+    <p>
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </p>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-default" %>
   </div>
+  <br/>
 <% end %>

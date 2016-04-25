@@ -16,6 +16,7 @@ class ArtistsController < ApplicationController
   # GET /artists/new
   def new
     @artist = Artist.new
+    @artist.image = params[:file]
   end
 
   # GET /artists/1/edit
@@ -70,6 +71,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :img)
+      params.require(:artist).permit(:name, :img, :image)
     end
 end
