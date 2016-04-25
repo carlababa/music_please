@@ -9,7 +9,7 @@
 </p>
 
 <p>
-  <%= image_tag(@artist.img, class: "artist-img") %>
+  <%= image_tag(@artist.image.url, class: "artist-img") %>
 </p>
 
 <div class="name">
@@ -22,10 +22,12 @@
     <p>Album: <%= song.album %>, <%= song.year %><p>
   </div>
   <div class="thumbnail">
-    <%= image_tag(song.img) %>
+    <%= image_tag(song.image.url) %>
   </div>
 <%end%>
 
-<!-- <%= link_to 'Edit', edit_artist_path(@artist) %> | -->
-<div class="name"><%= link_to 'Back', artists_path, class: "btn btn-default btn-lg" %></div>
+<%= link_to 'Edit Artist', edit_artist_path(@artist), class: "btn btn-default btn-lg" %> |
+<%= link_to 'New Song', new_song_path, class: "btn btn-default btn-lg" %>
+<br/>
+<div class="name"><%= link_to 'Back', artists_path %></div>
 </div>

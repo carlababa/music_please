@@ -6,11 +6,12 @@
 
 <% @artists.each do |artist| %>
     <div class="name"><h3><%= link_to "#{artist.name}", artist %></h3></div>
-    <div class="thumbnail"><%= link_to image_tag(artist.img), artist %></div>
+    <div class="thumbnail"><%= link_to image_tag(artist.image.url), artist %></div>
     <!-- <td><%= link_to 'Show', artist %></td> -->
     <!-- <td><%= link_to 'Edit', edit_artist_path(artist) %></td> -->
     <!-- <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
 <% end %>
 
-<div class="name"><%= link_to 'New Artist', new_artist_path, class: "btn btn-default btn-lg" %></div>
+<%= link_to 'New Artist', new_artist_path, class: "btn btn-default btn-lg" %> | 
+<%= link_to 'All Songs', songs_path, class: "btn btn-default btn-lg" %>
 </div>
