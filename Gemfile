@@ -47,3 +47,5 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'carrierwave'
+gem 'cloudinary'
+gem 'rails_12factor', group: :production
